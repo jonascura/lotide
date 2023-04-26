@@ -16,22 +16,25 @@ const countOnly = function(allItems, itemsToCount) {
   
   // check itemsToCount
   for (item in itemsToCount) {
-    count = 0
+    
     //console.log(item) // Name value
     //console.log(itemsToCount[item]) // Truthy or falsey
     if (itemsToCount[item] === true) {
+      count = 0
       for (index in allItems) {
         // console.log(index) // Number index
         // console.log(allItems[index]) // name value
         if (item === allItems[index]) {
           // console.log('They match here')
-          count += 1
+          count += 1;
         }
       }
+      if (count > 0) {
+        console.log(item + ':', count);
+      }   
     }
-    console.log(item + ':', count)
   }
-}
+};
 
 
 
