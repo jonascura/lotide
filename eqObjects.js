@@ -16,10 +16,10 @@ const assertEqual = function(actual, expected) {
 const eqObjects = function(object1, object2) {
   // handle amount of keys in object
   if (Object.keys(object1).length === Object.keys(object2).length) {
-    let isTrue = false
+    let isTrue = false;
     // iterate through the keys and values
     for (let key1 of Object.keys(object1)) {
-      console.log("the key we are checking is:", key1) // visualize current key
+      console.log("the key we are checking is:", key1); // visualize current key
       // check if key is an array or primative
       if (Array.isArray(object1[key1])) {
         console.log("this key is an ARRAY!!"); // confirmation of array
@@ -37,8 +37,8 @@ const eqObjects = function(object1, object2) {
         console.log("primatives match"); // confirm match
         isTrue = true; // can't use return because it terminates the function not allowing loop if needed, change isTrue value instead
       } else {
-          console.log("primatives DO NOT match"); // confirm not match
-          return false; // terminate function once false
+        console.log("primatives DO NOT match"); // confirm not match
+        return false; // terminate function once false
       }
     }
     return isTrue;
@@ -67,18 +67,18 @@ assertEqual(eqObjects(multiColorShirtObject  , aWrongSizedMultiColorShirtObject)
 
 console.log();
 console.log("keys don't match >> false");
-const longSleeveMultiColorShirtObject= { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
+const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
 //eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject); // => false
 assertEqual(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject), false);
 
 console.log();
 console.log("primative tests:");
 const shirtObject = { color: "red", size: "medium" };
-const anotherShirtObject= { size: "medium", color: "red" };
+const anotherShirtObject = { size: "medium", color: "red" };
 //eqObjects(shirtObject , anotherShirtObject); // => true
 //We need to use that return value in combination with assertEquals to test if the function is working correctly.
 assertEqual(eqObjects(shirtObject , anotherShirtObject), true);
 
-const longSleeveShirtObject= { size: "medium", color: "red", sleeveLength: "long" };
+const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
 //eqObjects(shirtObject , longSleeveShirtObject); // => false
 assertEqual(eqObjects(shirtObject , longSleeveShirtObject), false);
