@@ -1,15 +1,3 @@
-const eqArrays = function(a, b) {
-  return JSON.stringify(a) === JSON.stringify(b); // turns arrays into strings for comparison
-};
-
-const assertArraysEqual = function(a, b) {
-  if (eqArrays(a, b) === true) {
-    console.log("Assertion Passed:", a, "===", b);
-  } else {
-    console.log("Assertion Failed:", a, "!==", b);
-  }
-};
-
 const middle = function(array) {
   let middle = [];
   if (array.length > 2) {
@@ -20,13 +8,7 @@ const middle = function(array) {
       middle.push(array[(array.length / 2)]);
     }
   }
-  console.log(middle);
+  return middle;
 };
 
-// TEST CODE
-middle([1]); // => []
-middle([1, 2]); // => []
-middle([1, 2, 3]); // => [2]
-middle([1, 2, 3, 4, 5]); // => [3]
-middle([1, 2, 3, 4]); // => [2, 3]
-middle([1, 2, 3, 4, 5, 6]); // => [3, 4]
+module.exports = middle;
